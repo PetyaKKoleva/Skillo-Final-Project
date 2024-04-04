@@ -22,7 +22,7 @@ public class DeletePostTest extends BaseTest {
         System.out.println("4.Click on 'New post' icon");
         headerContainer.navigateToNewPostLink();
         System.out.println("5.Click the Browse button to upload a photo");
-        File fileToUpload = new File("C:\\Users\\infoc\\IdeaProjects\\Skillo Automation project\\src\\test\\java\\resources\\cat.jpg");
+        File fileToUpload = new File("src/test/java/resources/uploads/deletePost.png");
         NewPostPage newPostPage = new NewPostPage(driver);
         newPostPage.uploadFile(fileToUpload);
         System.out.println("6.Toggle the private option under the uploaded photo");

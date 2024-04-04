@@ -17,7 +17,7 @@ public class BaseTest {
     public WebDriver driver;
     public WebDriverWait wait;
 
-    public static final String screenshot_dir = "C:\\Users\\infoc\\IdeaProjects\\Skillo Automation project\\src\\test\\java\\resources\\screenshots";
+    public static final String screenshot_dir = "src/test/java/resources/screenshots/";
 
     @BeforeMethod
     public void setUp() {
@@ -29,11 +29,11 @@ public class BaseTest {
         PageFactory.initElements(driver, this);
     }
 
-    public void takesScreenshot(ITestResult testResult) {
+    public void takeScreenshot(ITestResult testResult) {
         if (testResult.getStatus() == ITestResult.FAILURE) {
             TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
             File screenshot = takesScreenshot.getScreenshotAs(OutputType.FILE);
-            String testName = testResult.getTestName() + testResult.getEndMillis();
+            String testName = testResult.getName();
             try {
                 FileUtils.copyFile(screenshot, new File(screenshot_dir.concat(testName).concat(".jpeg")));
             } catch (IOException e) {
@@ -44,13 +44,10 @@ public class BaseTest {
 
     @AfterMethod
     public void cleanUp(ITestResult testResult) {
-        takesScreenshot(testResult);
+        takeScreenshot(testResult);
         driver.quit();
-
     }
 }
-
-
 
 
 

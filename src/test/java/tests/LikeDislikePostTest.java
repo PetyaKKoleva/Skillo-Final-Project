@@ -11,7 +11,7 @@ public class LikeDislikePostTest extends BaseTest {
 
 
     @Test
-    public void LikeDislike() {
+    public void LikeDislikeTest() {
         System.out.println("1.Go to HomePage and login");
         LoginPage loginPage = new LoginPage(driver);
         loginPage.successfulLogin("camila", "ass646IKMnaz");
@@ -19,7 +19,7 @@ public class LikeDislikePostTest extends BaseTest {
         HeaderContainer headerContainer = new HeaderContainer(driver);
         headerContainer.navigateToNewPostLink();
         System.out.println("3.Click the Browse button to upload a photo.");
-        File fileToUpload = new File("C:\\Users\\infoc\\IdeaProjects\\Skillo Automation project\\src\\test\\java\\resources\\cat.jpg");
+        File fileToUpload = new File("src/test/java/resources/uploads/likeDislike.jpg");
         NewPostPage newPostPage = new NewPostPage(driver);
         newPostPage.uploadFile(fileToUpload);
         System.out.println("4.Toggle the private option under the uploaded photo");
@@ -39,8 +39,6 @@ public class LikeDislikePostTest extends BaseTest {
         profilePage.verifyLikeButtonNotClicked();
 
     }
-
-
 
     }
 

@@ -22,7 +22,7 @@ public class UploadPhotoTest extends BaseTest {
         System.out.println("3.Verify that the user is on the correct URL");
         newPostPage.verifyNewPostUrl();
         System.out.println("4.Upload a file different from image");
-        File fileToUpload = new File("C:\\Users\\infoc\\IdeaProjects\\Skillo Automation project\\src\\test\\java\\resources\\test");
+        File fileToUpload = new File("src/test/java/resources/uploads/uploadPhotoNegative");
         newPostPage.uploadFile(fileToUpload);
         System.out.println("5.Verify that there is the correct error message");
         newPostPage.verifyOnlyImagesAllowed();

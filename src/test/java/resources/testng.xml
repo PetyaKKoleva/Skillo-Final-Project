@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MYSuite">
+    <test name="AllTests">
+        <classes>
+            <class name="tests.DeletePostTest"/>
+            <class name="tests.FollowUnfollowTest"/>
+            <class name="tests.LikeDislikePostTest"/>
+            <class name="tests.LoginTest"/>
+            <class name="tests.UploadPhotoTest"/>
+        </classes>
+    </test>
+</suite>
